@@ -14,11 +14,13 @@ jobs:
     <<: *defaults
     environment:
       - NODE_VERSION: 8.9.1
+      - DBUS_SESSION_BUS_ADDRESS: /dev/null
 
   node 9.2.0:
     <<: *defaults
     environment:
       - NODE_VERSION: 9.2.0
+      - DBUS_SESSION_BUS_ADDRESS: /dev/null
 
 workflows:
   version: 2
