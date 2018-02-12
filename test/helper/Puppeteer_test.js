@@ -17,7 +17,7 @@ const siteUrl = TestHelper.siteUrl();
 
 describe('Puppeteer', function () {
   this.timeout(35000);
-  // this.retries(1);
+  this.retries(1);
 
   before(() => {
     global.codecept_dir = path.join(__dirname, '/../data');
