@@ -111,6 +111,7 @@ describe('Puppeteer', function () {
       .then(numPages => assert.equal(numPages, 1))
       .then(() => I.click('New tab'))
       .then(() => I.switchToNextTab())
+      .then(() => I.wait(1))
       .then(() => I.seeCurrentUrlEquals('/login'))
       .then(() => I.wait(1))
       .then(() => I.grabNumberOfOpenTabs())
@@ -128,6 +129,7 @@ describe('Puppeteer', function () {
     it('should close current tab', () => I.amOnPage('/info')
       .then(() => I.click('New tab'))
       .then(() => I.switchToNextTab())
+      .then(() => I.wait(1))
       .then(() => I.seeInCurrentUrl('/login'))
       .then(() => I.wait(1))
       .then(() => I.grabNumberOfOpenTabs())
@@ -144,6 +146,7 @@ describe('Puppeteer', function () {
       .then(() => I.amOnPage('/info'))
       .then(() => I.click('New tab'))
       .then(() => I.switchToNextTab())
+      .then(() => I.wait(1))
       .then(() => I.seeInCurrentUrl('/login'))
       .then(() => I.closeOtherTabs())
       .then(() => I.seeInCurrentUrl('/login'))
@@ -160,8 +163,10 @@ describe('Puppeteer', function () {
 
     it('should switch to previous tab', () => I.amOnPage('/info')
       .then(() => I.openNewTab())
+      .then(() => I.wait(1))
       .then(() => I.seeInCurrentUrl('about:blank'))
       .then(() => I.switchToPreviousTab())
+      .then(() => I.wait(1))
       .then(() => I.seeInCurrentUrl('/info')));
 
     it('should assert when there is no ability to switch to previous tab', () => I.amOnPage('/info')
