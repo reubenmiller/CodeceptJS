@@ -63,6 +63,7 @@ services:
 
   selenium.chrome:
     image: selenium/standalone-chrome:3.5.2-antimony
+    shm_size: 1G
     ports:
       - 4444:4444
     volumes:
