@@ -24,8 +24,8 @@ before_install:
 - docker pull selenium/standalone-chrome:3.9
 before_script:
 - docker run -d --net=host --name seimage --shm-size 2g selenium/standalone-chrome:3.9
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
+# - export DISPLAY=:99.0
+# - sh -e /etc/init.d/xvfb start
 - chmod -R 777 test/data
 - php -S 127.0.0.1:8000 -t test/data/app >/dev/null 2>&1 &
 - npm run json-server &
@@ -34,4 +34,4 @@ script:
 - npm build && npm test
 - './node_modules/.bin/mocha test/rest'
 - './node_modules/.bin/mocha test/helper/${HELPER}_test.js'
-- docker logs seimage
+- docker logs seimage || exit 0
