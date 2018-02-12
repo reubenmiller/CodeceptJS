@@ -34,4 +34,4 @@ script:
 - npm build && npm test
 - './node_modules/.bin/mocha test/rest'
 - './node_modules/.bin/mocha test/helper/${HELPER}_test.js'
-- docker logs -f seimage
+- docker logs seimage
