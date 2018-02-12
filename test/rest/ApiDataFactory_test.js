@@ -50,6 +50,7 @@ describe('ApiDataFactory', () => {
 
   describe('create and cleanup records', function () {
     this.timeout(20000);
+    this.retries(1);
 
     it('should create a new post', function* () {
       yield I.have('post');
