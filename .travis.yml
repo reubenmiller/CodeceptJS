@@ -36,5 +36,5 @@ script:
 - './node_modules/.bin/mocha test/rest'
 - './node_modules/.bin/mocha test/helper/${HELPER}_test.js'
 after_failure:
-- docker logs seimage
+- docker logs --tail 150 seimage
 - sleep 10
