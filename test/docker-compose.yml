@@ -65,6 +65,8 @@ services:
     image: selenium/standalone-chrome:3.5.2-antimony
     ports:
       - 4444:4444
+    volumes:
+      - /dev/shm:/dev/shm
 
   php:
     image: php:7.0
