@@ -41,8 +41,10 @@ script:
 after_success:
 - df -h
 - docker exec -it seimage df -h
+- docker exec -it seimage echo DBUS_SESSION_BUS_ADDRESS = $DBUS_SESSION_BUS_ADDRESS
 
 after_failure:
 - docker exec -it seimage df -h
+- docker exec -it seimage echo DBUS_SESSION_BUS_ADDRESS = $DBUS_SESSION_BUS_ADDRESS
 - docker logs --tail 300 seimage
 - sleep 10
