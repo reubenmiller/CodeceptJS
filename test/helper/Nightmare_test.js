@@ -14,7 +14,7 @@ const webApiTests = require('./webapi');
 
 describe('Nightmare', function () {
   this.retries(3);
-  this.timeout(35000);
+  this.timeout(60000);
 
   before(() => {
     global.codecept_dir = path.join(__dirname, '/../data');

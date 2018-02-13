@@ -17,7 +17,7 @@ require('co-mocha')(require('mocha'));
 
 describe('Protractor-NonAngular', function () {
   this.retries(3);
-  this.timeout(35000);
+  this.timeout(60000);
 
   before(() => {
     global.codecept_dir = path.join(__dirname, '/../data');

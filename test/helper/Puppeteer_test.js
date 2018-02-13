@@ -16,7 +16,7 @@ let page;
 const siteUrl = TestHelper.siteUrl();
 
 describe('Puppeteer', function () {
-  this.timeout(35000);
+  this.timeout(60000);
   this.retries(1);
 
   before(() => {

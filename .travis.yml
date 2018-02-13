@@ -23,7 +23,7 @@ services:
 before_install:
 - docker pull selenium/standalone-chrome:3.9
 before_script:
-- docker run -d --net=host --name seimage --shm-size 1G selenium/standalone-chrome:3.9
+- docker run -d --net=host --name seimage --shm-size 4G selenium/standalone-chrome:3.9
 - df -h
 - docker exec -it seimage df -h
 - export DBUS_SESSION_BUS_ADDRESS=/dev/null
@@ -44,5 +44,5 @@ after_success:
 
 after_failure:
 - docker exec -it seimage df -h
-- docker logs --tail 200 seimage
+- docker logs --tail 300 seimage
 - sleep 10
